@@ -12,7 +12,7 @@ export default function Carlist() {
   useEffect(() => fetchData(), []);
 
   const fetchData = () => {
-    fetch("https://carstockrest.herokuapp.com/cars")
+    fetch("https://car-rest-service-carshop.2.rahtiapp.fi/cars")
       .then(response => response.json())
       .then(data => setCars(data._embedded.cars));
   };
@@ -26,7 +26,7 @@ export default function Carlist() {
   };
 
   const saveCar = car => {
-    fetch("https://carstockrest.herokuapp.com/cars", {
+    fetch("https://car-rest-service-carshop.2.rahtiapp.fi/cars", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(car)
